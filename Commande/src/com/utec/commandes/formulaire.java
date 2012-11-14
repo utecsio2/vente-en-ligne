@@ -1,6 +1,9 @@
-package code.source.site;
+package com.utec.commandes;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -36,34 +39,36 @@ public class formulaire extends HttpServlet {
 			}
 		}
 	}
-
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		int idEtat = 0;
-		int IdCommande;
+		String idEtat = "0";
+		//int IdCommande;
 		String nom = request.getParameter("thelist");
 		//IdCommande = request.getParameter()
-		switch (nom)
-		{
-		  case "En attente de paiement" : idEtat = 0;
-		  case "Validé" : idEtat = 1;
-		  case "En préparation" : idEtat = 2;
-		  case "Envoyé" : idEtat = 3;
-		}			
-		String query = "UPDATE Etat SET idEtat =" + idEtat + " WHERE IdCommande =";// + IdCommande;
-
-		ResultSet results;
+		if(nom.equals("En attente de paiement")){
+			idEtat = "1";
+		}
+		/*{
+		  case "En attente de paiement" : idEtat = "0";
+		  case "Validé" : idEtat = "1";
+		  case "En préparation" : idEtat = "2";
+		  case "Envoyé" : idEtat = "3";
+		}		*/	
+		//String query = "UPDATE Etat SET idEtat =" + idEtat + " WHERE IdCommande =";// + IdCommande;
+		
+		
+		//ResultSet results;
 
 		try {
-			//Statement stmt = connexion.createStatement();
-
-			//results = stmt.executeQuery(query);
-			System.out.println(query);
+			Class.forName("org.hsqldb.jdbcDriver");
+			Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost", "sa", null);
+			String req = "INSERT INTO Test (Nom) VALUES (?)";
+			PreparedStatement prepStmt = connection.prepareStatement( req );
+			prepStmt.setString(1, idEtat);
+			prepStmt.executeUpdate();
+			System.out.println("Requete effectuee");
 		}catch(Exception e){
-			System.out.println("exception due a la requete");
+			e.printStackTrace();
 
 		}
 	}

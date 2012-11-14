@@ -1,24 +1,11 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Formulaire</title>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Insert title here</title>
 </head>
 <body>
-	<form method = "post" action = "/ProjetJava/formulaire">
-		<select name="thelist" onChange="combo(this)">
-  			<option>En attente de paiement</option>
-  			<option>Validé</option>
-  			<option>En préparation</option>
-  			<option>Envoyé</option>
-		</select>
-		<input type = "submit" value = "Valider l'état de la commande" name = "ValidEtatCmd">
-	</form>
-	<form method = "get" action = "/ProjetJava/formulaire">
-		<input type = "hidden" value = "1" name = "Action">
-		<input type = "submit" value = "Voir le détail de la commande" name = "DetailCmd">
-	</form>
-	<form method = "get" action = "/ProjetJava/formulaire">
-	<input type = "hidden" value = "2" name = "Action">
-		<input type = "submit" value = "Supprimer la commande" name = "SupprimerCmd">
-	</form>
+	<a href="commandes.html">Commandes</a>
+
 </body>
 </html>
