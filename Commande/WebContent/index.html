@@ -1,0 +1,24 @@
+<html>
+<head>
+<title>Formulaire</title>
+</head>
+<body>
+	<form method = "post" action = "/ProjetJava/formulaire">
+		<select name="thelist" onChange="combo(this)">
+  			<option>En attente de paiement</option>
+  			<option>Validé</option>
+  			<option>En préparation</option>
+  			<option>Envoyé</option>
+		</select>
+		<input type = "submit" value = "Valider l'état de la commande" name = "ValidEtatCmd">
+	</form>
+	<form method = "get" action = "/ProjetJava/formulaire">
+		<input type = "hidden" value = "1" name = "Action">
+		<input type = "submit" value = "Voir le détail de la commande" name = "DetailCmd">
+	</form>
+	<form method = "get" action = "/ProjetJava/formulaire">
+	<input type = "hidden" value = "2" name = "Action">
+		<input type = "submit" value = "Supprimer la commande" name = "SupprimerCmd">
+	</form>
+</body>
+</html>
