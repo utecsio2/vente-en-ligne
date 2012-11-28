@@ -31,11 +31,13 @@ public class formulaire extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String Req = request.getParameter("Action");
-		if (Req == "1"){
+		//System.out.println(Req);
+		if (Req.equals("1")){
 			try{
 				request.setAttribute("name", Req);
 				getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
 			}catch(ServletException e){
+				
 			}
 		}
 	}
@@ -50,9 +52,9 @@ public class formulaire extends HttpServlet {
 		}
 		/*{
 		  case "En attente de paiement" : idEtat = "0";
-		  case "Validé" : idEtat = "1";
-		  case "En préparation" : idEtat = "2";
-		  case "Envoyé" : idEtat = "3";
+		  case "ValidÃ©" : idEtat = "1";
+		  case "En prÃ©paration" : idEtat = "2";
+		  case "EnvoyÃ©" : idEtat = "3";
 		}		*/	
 		//String query = "UPDATE Etat SET idEtat =" + idEtat + " WHERE IdCommande =";// + IdCommande;
 		
