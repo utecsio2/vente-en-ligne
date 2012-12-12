@@ -1,0 +1,160 @@
+// login.html
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Login</title>
+</head>
+<body>
+<form action="ConnexionFormServlet" method="POST">
+	Pseudo : <input type="text" name="pseudo"><br>
+	Password : <input type="password" name="password"><br>
+	<input type="submit" value="Connexion">
+</form>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ConnexionFormServlet
+
+package com.utec;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+/**
+ * Servlet implementation class ConnexionFormServlet
+ */
+public class ConnexionFormServlet extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ConnexionFormServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
+		
+		String pseudo = request.getParameter("pseudo");
+		String password = request.getParameter("password");
+		
+		try {
+			if (pseudo != "" && password != "")
+			{
+				Class.forName("com.mysql.jdbc.Driver") ;	// chargement du pilote
+				Connection connexion = DriverManager.getConnection( "jdbc:mysql://94.23.37.6/nassim", "nassim", "btssio");
+				System.out.println(connexion);
+				Statement instruction = connexion.createStatement();
+				
+				ResultSet result = instruction.executeQuery("SELECT id, pseudo, password FROM pokjava WHERE pseudo = '" + pseudo + "'");
+				
+				System.out.println("Pseudo = " + pseudo);
+				
+				while (result.next())
+				{
+					System.out.println("\nPassword = " + result.getString("password"));
+					if (result.getString("password").equals(password))
+					{
+						request.setAttribute("code", "connection_ok");
+					}
+					else
+					{
+						request.setAttribute("code", "password_nok");
+					}
+				}
+				
+			}
+			else
+			{
+				request.setAttribute("code", "noaccount");
+			}
+			
+			getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
+		} catch( Exception e)
+		{
+			System.out.println(e);
+		}
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+// result.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Test</title>
+</head>
+<%
+String errcode = (String)request.getAttribute("code");
+String message = null;
+
+if (errcode == "noaccount")
+{
+	message = "Ce compte n'existe pas !";
+}
+else if (errcode == "password_nok")
+{
+	message = "Mot de passe incorrect.";
+}
+else if (errcode == "connection_ok")
+{
+	message = "Vous êtes connecté !";
+}
+else
+{
+	message = "Erreur inconnue...";
+}
+
+%>
+<body>
+	<%=message %>
+</body>
+</html>
