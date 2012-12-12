@@ -43,35 +43,36 @@ public class formulaire extends HttpServlet {
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		String idEtat = "0";
-		//int IdCommande;
+		int idEtat = 0;
+		int IdCommande = 1;
 		String nom = request.getParameter("thelist");
-		//IdCommande = request.getParameter()
 		if(nom.equals("En attente de paiement")){
-			idEtat = "1";
+			idEtat = 0;
+		}else if(nom.equals("Valide")){
+			idEtat = 1;
+		}else if(nom.equals("En preparation")){
+			idEtat = 2;
+		}else if(nom.equals("Envoye")){
+			idEtat = 3;
 		}
-		/*{
-		  case "En attente de paiement" : idEtat = "0";
-		  case "Validé" : idEtat = "1";
-		  case "En préparation" : idEtat = "2";
-		  case "Envoyé" : idEtat = "3";
-		}		*/	
-		//String query = "UPDATE Etat SET idEtat =" + idEtat + " WHERE IdCommande =";// + IdCommande;
-		
-		
-		//ResultSet results;
-
 		try {
 			Class.forName("org.hsqldb.jdbcDriver");
 			Connection connection = DriverManager.getConnection("jdbc:hsqldb:hsql://localhost", "sa", null);
-			String req = "INSERT INTO Test (Nom) VALUES (?)";
+			String req = "INSERT INTO Commande (IdCommande, idEtat) VALUES (?, ?)";
 			PreparedStatement prepStmt = connection.prepareStatement( req );
-			prepStmt.setString(1, idEtat);
+			prepStmt.setInt(1, IdCommande);
+			prepStmt.setInt(2, idEtat);
 			prepStmt.executeUpdate();
 			System.out.println("Requete effectuee");
+			try{
+				request.setAttribute("IDCom", IdCommande);
+				request.setAttribute("IDEtat", idEtat);
+				getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
+			}catch(ServletException e){
+				
+			}
 		}catch(Exception e){
 			e.printStackTrace();
-
 		}
 	}
 	

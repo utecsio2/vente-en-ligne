@@ -1,24 +1,27 @@
 <html>
-<head>
-<title>Formulaire</title>
-</head>
-<body>
-	<form method = "post" action = "/venteEnLigne/formulaire">
-		<select name="thelist" onChange="combo(this)">
-  			<option>En attente de paiement</option>
-  			<option>Validé</option>
-  			<option>En préparation</option>
-  			<option>Envoyé</option>
-		</select>
-		<input type = "submit" value = "Valider l'état de la commande" name = "ValidEtatCmd">
-	</form>
-	<form method = "get" action = "/venteEnLigne/formulaire">
-		<input type = "hidden" value = "1" name = "Action">
-		<input type = "submit" value = "Voir le détail de la commande" name = "DetailCmd">
-	</form>
-	<form method = "get" action = "/venteEnLigne/formulaire">
-	<input type = "hidden" value = "2" name = "Action">
-		<input type = "submit" value = "Supprimer la commande" name = "SupprimerCmd">
-	</form>
-</body>
+	<head>
+		<title>Formulaire</title>
+		<meta charset = "utf-8">
+	</head>
+	<body>
+		<form method = "post" action = "/venteEnLigne/formulaire">
+			<select name="thelist" onChange="combo(this)">
+  				<option>En attente de paiement</option>
+  				<option>Valide</option>
+  				<option>En preparation</option>
+  				<option>Envoye</option>
+			</select>
+			<br>
+			<br>
+			<input type = "submit" value = "Valider l'état de la commande" name = "ValidEtatCmd" onClick="return(confirm('Etes-vous sûr de vouloir passer cette commande en statut?'))">
+		</form>
+		<form method = "get" action = "/venteEnLigne/formulaire">
+			<input type = "hidden" value = "1" name = "Action">
+			<input type = "submit" value = "Voir le détail de la commande" name = "DetailCmd">
+		</form>
+		<form method = "get" action = "/venteEnLigne/formulaire">
+		<input type = "hidden" value = "2" name = "Action">
+			<input type = "submit" value = "Supprimer la commande" name = "SupprimerCmd"  onClick="return(confirm('Etes-vous sûr de vouloir supprimer cette commande?'))">
+		</form>
+	</body>
 </html>
