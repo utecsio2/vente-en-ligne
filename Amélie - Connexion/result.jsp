@@ -14,6 +14,7 @@
 		<h1>Bienvenue <%=login %> !</h1>
 		<% } else {%>
 			<h1>Veuillez réésayer ou vous inscrire</h1>
+			<a href="index.html">Retour</a>
 		<% } %>
 	
 </body>
