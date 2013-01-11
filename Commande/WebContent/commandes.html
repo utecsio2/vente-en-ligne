@@ -20,7 +20,8 @@
 			<input type = "submit" value = "Voir le détail de la commande" name = "DetailCmd">
 		</form>
 		<form method = "get" action = "/venteEnLigne/formulaire">
-		<input type = "hidden" value = "2" name = "Action">
+			<input type = "hidden" value = "2" name = "Action">
+			<input type = "text" value ="" name = "IDCommande">
 			<input type = "submit" value = "Supprimer la commande" name = "SupprimerCmd"  onClick="return(confirm('Etes-vous sûr de vouloir supprimer cette commande?'))">
 		</form>
 	</body>
