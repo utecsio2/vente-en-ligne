@@ -12,6 +12,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class GestionFormServlet
@@ -56,8 +57,11 @@ public class GestionFormServlet extends HttpServlet {
 			{
 				String nom = result.getString("login");
 				request.setAttribute("login", login);
+				HttpSession session = request.getSession();
+				session.setAttribute("login", login);
 			}
-		}
+			else{}
+		}else{}
 
 		getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
 		
