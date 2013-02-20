@@ -63,7 +63,7 @@ public class GestionConnexionServlet extends HttpServlet {
 			else{}
 		}else{}
 
-		getServletContext().getRequestDispatcher("/result.jsp").forward(request, response);
+		getServletContext().getRequestDispatcher("/resultconnexion.jsp").forward(request, response);
 		
 		}	catch( Exception e ){
 				e.printStackTrace();

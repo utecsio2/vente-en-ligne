@@ -1,0 +1,6 @@
+INDEX VERSION 1.122+C:\Documents and Settings\eleve\Mes documents\GitHub\vente-en-ligne\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+95001714.index
+2761669013.index
+121727503.index
+2826961434.index
+1788161360.index
