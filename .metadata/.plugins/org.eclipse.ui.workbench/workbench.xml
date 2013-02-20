@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<workbench progressCount="43" version="2.0">
+<workbench progressCount="73" version="2.0">
 <workbenchAdvisor/>
 <window height="768" width="1024" x="132" y="174">
 <fastViewData fastViewLocation="1024"/>
@@ -13,6 +13,7 @@
 <coolItem id="org.eclipse.debug.ui.launchActionSet" itemType="typeToolBarContribution" x="124" y="22"/>
 <coolItem id="org.eclipse.jst.j2ee.J2eeMainActionSet" itemType="typeToolBarContribution" x="88" y="22"/>
 <coolItem id="org.eclipse.search.searchActionSet" itemType="typeToolBarContribution" x="98" y="22"/>
+<coolItem id="org.eclipse.ui.edit.text.actionSet.presentation" itemType="typeToolBarContribution" x="131" y="22"/>
 <coolItem id="org.eclipse.wst.server.ui.internal.webbrowser.actionSet" itemType="typeToolBarContribution" x="39" y="22"/>
 <coolItem id="org.eclipse.wst.ws.explorer.explorer" itemType="typeToolBarContribution" x="39" y="22"/>
 <coolItem id="org.eclipse.wst.xml.ui.perspective.NewFileToolBar" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -20,6 +21,8 @@
 <coolItem id="group.nav" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.navigate" itemType="typeToolBarContribution" x="183" y="22"/>
 <coolItem id="group.editor" itemType="typeGroupMarker"/>
+<coolItem id="org.eclipse.jdt.ui.CompilationUnitEditor" itemType="typeToolBarContribution" x="-1" y="-1"/>
+<coolItem id="org.eclipse.jst.jsp.core.jspsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="org.eclipse.wst.html.core.htmlsource.source" itemType="typeToolBarContribution" x="-1" y="-1"/>
 <coolItem id="group.help" itemType="typeGroupMarker"/>
 <coolItem id="org.eclipse.ui.workbench.help" itemType="typeToolBarContribution" x="-1" y="-1"/>
@@ -31,13 +34,23 @@
 <folder appearance="1" expanded="2">
 <presentation id="org.eclipse.ui.presentations.WorkbenchPresentationFactory">
 <part id="0"/>
+<part id="1"/>
+<part id="2"/>
 </presentation>
 </folder>
 </info>
 </editorArea>
-<editor activePart="true" focus="true" id="org.eclipse.wst.html.core.htmlsource.source" name="index.html" partName="index.html" path="C:/Documents and Settings/eleve/Mes documents/GitHub/vente-en-ligne/venteEnLigne fichiers originaux eclipse/WebContent/index.html" title="index.html" tooltip="venteEnLigne fichiers originaux eclipse/WebContent/index.html" workbook="DefaultEditorWorkbook">
-<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/venteEnLigne fichiers originaux eclipse/WebContent/index.html"/>
+<editor id="org.eclipse.wst.html.core.htmlsource.source" name="connexion.html" partName="connexion.html" path="C:/Documents and Settings/eleve/Mes documents/GitHub/vente-en-ligne/venteEnLigne fichiers originaux eclipse/WebContent/connexion.html" title="connexion.html" tooltip="venteEnLigne fichiers originaux eclipse/WebContent/connexion.html" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/venteEnLigne fichiers originaux eclipse/WebContent/connexion.html"/>
+<editorState selectionHorizontalPixel="0" selectionLength="5" selectionOffset="405" selectionTopPixel="0"/>
+</editor>
+<editor id="org.eclipse.jst.jsp.core.jspsource.source" name="result.jsp" partName="result.jsp" path="C:/Documents and Settings/eleve/Mes documents/GitHub/vente-en-ligne/venteEnLigne fichiers originaux eclipse/WebContent/result.jsp" title="result.jsp" tooltip="venteEnLigne fichiers originaux eclipse/WebContent/result.jsp" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/venteEnLigne fichiers originaux eclipse/WebContent/result.jsp"/>
 <editorState selectionHorizontalPixel="0" selectionLength="0" selectionOffset="0" selectionTopPixel="0"/>
+</editor>
+<editor activePart="true" focus="true" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GestionConnexionServlet.java" partName="GestionConnexionServlet.java" path="C:/Documents and Settings/eleve/Mes documents/GitHub/vente-en-ligne/venteEnLigne fichiers originaux eclipse/src/com/utec/GestionConnexionServlet.java" title="GestionConnexionServlet.java" tooltip="venteEnLigne fichiers originaux eclipse/src/com/utec/GestionConnexionServlet.java" workbook="DefaultEditorWorkbook">
+<input factoryID="org.eclipse.ui.part.FileEditorInputFactory" path="/venteEnLigne fichiers originaux eclipse/src/com/utec/GestionConnexionServlet.java"/>
+<editorState selectionHorizontalPixel="116" selectionLength="5" selectionOffset="1964" selectionTopPixel="600"/>
 </editor>
 </editors>
 <views>
@@ -193,8 +206,54 @@
 <navigationHistory>
 <editors>
 <editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/venteEnLigne fichiers originaux eclipse/WebContent/index.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" path="/venteEnLigne fichiers originaux eclipse/WebContent/connexion.html"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" path="/venteEnLigne fichiers originaux eclipse/WebContent/result.jsp"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/venteEnLigne fichiers originaux eclipse/src/com/utec/GestionConnexionServlet.java"/>
+<editor factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" path="/venteEnLigne fichiers originaux eclipse/src/com/utec/GestionInscriptionServlet.java"/>
 </editors>
-<item active="true" historyLabel="index.html" index="0">
+<item historyLabel="index.html" index="0">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="connexion.html" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="result.jsp" index="2">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="connexion.html" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="GestionConnexionServlet.java" index="3">
+<position info="not_deleted" x="1927" y="0"/>
+</item>
+<item historyLabel="connexion.html" index="1">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="GestionConnexionServlet.java" index="3">
+<position info="not_deleted" x="1927" y="0"/>
+</item>
+<item historyLabel="GestionInscriptionServlet.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="GestionConnexionServlet.java" index="3">
+<position info="not_deleted" x="1927" y="0"/>
+</item>
+<item historyLabel="GestionInscriptionServlet.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="GestionConnexionServlet.java" index="3">
+<position info="not_deleted" x="1927" y="0"/>
+</item>
+<item historyLabel="GestionInscriptionServlet.java" index="4">
+<position info="not_deleted" x="0" y="0"/>
+</item>
+<item historyLabel="GestionConnexionServlet.java" index="3">
+<position info="not_deleted" x="1627" y="0"/>
+</item>
+<item historyLabel="connexion.html" index="1">
+<position info="not_deleted" x="405" y="5"/>
+</item>
+<item active="true" historyLabel="GestionConnexionServlet.java" index="3">
 <position info="not_deleted" x="0" y="0"/>
 </item>
 </navigationHistory>
@@ -215,6 +274,18 @@
 </trimLayout>
 </window>
 <mruList>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GestionConnexionServlet.java" tooltip="venteEnLigne fichiers originaux eclipse/src/com/utec/GestionConnexionServlet.java">
+<persistable path="/venteEnLigne fichiers originaux eclipse/src/com/utec/GestionConnexionServlet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jdt.ui.CompilationUnitEditor" name="GestionInscriptionServlet.java" tooltip="venteEnLigne fichiers originaux eclipse/src/com/utec/GestionInscriptionServlet.java">
+<persistable path="/venteEnLigne fichiers originaux eclipse/src/com/utec/GestionInscriptionServlet.java"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.jst.jsp.core.jspsource.source" name="result.jsp" tooltip="venteEnLigne fichiers originaux eclipse/WebContent/result.jsp">
+<persistable path="/venteEnLigne fichiers originaux eclipse/WebContent/result.jsp"/>
+</file>
+<file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" name="connexion.html" tooltip="venteEnLigne fichiers originaux eclipse/WebContent/connexion.html">
+<persistable path="/venteEnLigne fichiers originaux eclipse/WebContent/connexion.html"/>
+</file>
 <file factoryID="org.eclipse.ui.part.FileEditorInputFactory" id="org.eclipse.wst.html.core.htmlsource.source" name="index.html" tooltip="venteEnLigne fichiers originaux eclipse/WebContent/index.html">
 <persistable path="/venteEnLigne fichiers originaux eclipse/WebContent/index.html"/>
 </file>
