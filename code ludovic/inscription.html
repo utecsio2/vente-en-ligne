@@ -8,14 +8,14 @@
 		</script>
 	</head>
 	<body>
-		<form action="gestionFormServlet" method="post">
-			<label>Adresse e-mail : </label><input type="text" name="email"><span>(sera utile pour votre future connexion !)</span><br>
-			<label>Mot de passe : </label><input type="password" name="MotDePasse"><br>
-			<label>Confirmez le mot de passe : </label><input type="password" name="ConfirmeMotDePasse"><br>
+		<form action="inscription" method="post">
+			<label>Adresse e-mail : </label><input type="text" name="mail"><span>(sera utile pour votre future connexion !)</span><br>
+			<label>Mot de passe : </label><input type="password" name="motDePasse"><br>
+			<label>Confirmez le mot de passe : </label><input type="password" name="confirmeMotDePasse"><br>
 			<label>Nom : </label><input type="text" name="nom"><br>
 			<label>Prénom : </label><input type="text" name="prenom"><br>
 			<label>Numero de telephone : </label><input type="text" name="numTel"><br>
-			<label>Date de naissance : </label><input onChange="verifDate()" type="text" name="DateDeNaissance"/><span>format: AAAA-MM-JJ (ex: 1992-12-28 pour 28/12/1992)</span><br>
+			<label>Date de naissance : </label><input onChange="verifDate()" type="text" name="dateDeNaissance"/><span>format: AAAA-MM-JJ (ex: 1992-12-28 pour 28/12/1992)</span><br>
 			
 			
 			
